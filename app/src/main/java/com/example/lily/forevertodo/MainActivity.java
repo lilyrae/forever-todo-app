@@ -1,5 +1,6 @@
 package com.example.lily.forevertodo;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -45,11 +46,17 @@ public class MainActivity extends AppCompatActivity {
                         todoItemsAdapter.notifyDataSetChanged();
 
                         writeItems();
+                        showSuccess();
 
                         return true;
                     }
                 }
         );
+    }
+
+    private void showSuccess() {
+        Intent intent = new Intent(this, SuccessActivity.class);
+        startActivity(intent);
     }
 
     public void onAddItem(View v) {
